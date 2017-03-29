@@ -1,0 +1,2 @@
+#! /bin/sh
+ls db/migrate | sort -nk 1.1,1.14 | tail -n 1 | xargs -o -I migration $EDITOR db/migrate/migration

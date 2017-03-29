@@ -1,0 +1,4 @@
+--verbose=1
+--ignore=\..*.swp|.*~|.*.bak
+--ignore=(README|LICENSE|TODO)(..*)?
+--ignore=\.DS_Store
