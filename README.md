@@ -11,7 +11,7 @@ $ brew install git zsh tmux vim stow reattach-to-user-namespace
 Clone this repo into your home directory and then cd into it to issue the stow command:
 
 ```bash
-$ git clone git@bitbucket.org:onehouse/dotfiles.git onehouse-dotfiles
+$ git clone git@github.com:onehouse/dotfiles.git onehouse-dotfiles
 $ cd onehouse-dotfiles
 $ stow vim zsh rubygems tmux git
 ```
