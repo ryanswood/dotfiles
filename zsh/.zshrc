@@ -45,5 +45,6 @@ ZSH_THEME="onehouse"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.zshrc.local
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
