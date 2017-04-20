@@ -1,7 +1,20 @@
 cl()
 {
   builtin cd $1
-  ls -l
+  ls -hla
+}
+
+c()
+{
+  builtin cd $1
+  ls -hla
+}
+
+mc()
+{
+  mkdir $1
+  cd $1
+  ls -hla
 }
 
 tophistory()
