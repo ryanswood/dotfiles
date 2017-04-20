@@ -24,3 +24,10 @@ $ tmux source ~/.tmux.conf
 $ ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 ```
 
+## Removing stow
+
+If you want to remove stow installed dotfiles, in case you want to stow again from another source, you can remove the existing dot symlinks with:
+
+```bash
+$ stow -D vim zsh rubygems tmux git
+```
