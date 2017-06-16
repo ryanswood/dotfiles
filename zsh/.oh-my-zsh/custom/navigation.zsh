@@ -1,4 +1,3 @@
-# common system folders
 alias home="cl ~/ "
 alias desktop="cl ~/Desktop "
 alias downloads="cl ~/Downloads "
