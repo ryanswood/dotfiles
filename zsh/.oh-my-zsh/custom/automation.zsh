@@ -7,6 +7,7 @@ alias s='ssh'
 alias edithosts='sudo vi /etc/hosts'
 alias reloadhosts='dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 alias npr='npm run -s'
+alias es="exec $SHELL"
 
 cl()
 {
