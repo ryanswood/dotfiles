@@ -1,12 +1,5 @@
 #!/bin/bash
-# v1.2.0
 
-# N.b. This program favors early termination (with `exit`) over multiple levels of nested
-# conditionals (i.e. if-then-else expressions). That's why there's very little indendation
-# and many occurances of logical "and" (&&) and "or" (||) operators. Modifications should stick
-# to this style.
-
-# Exit immediately if any line that isn't an expression or a pipeline fails
 set -e
 
 function get_field_from_json {
@@ -91,7 +84,7 @@ function convert_name_to_initials {
 }
 
 # First arg is "out" - clear existing author config
-test 'out' = $1 && {
+test 'out' = "$1" && {
   # Always remove the hub crendential file
   remove_hub_credential_file
   flush_credential_cache
@@ -105,11 +98,12 @@ test 'out' = $1 && {
 }
 
 # No args given - show command usage and existing author config
-test $1 || {
+test "$1" || {
   echo "\
 Set git username(s):
-  git pair   <github-username>
-  git pair <github-username> [and] <github-username>...
+
+  $ git pair <github-username>
+  $ git pair <github-username> [and] <github-username>...
 
 Examples:
 
@@ -117,7 +111,8 @@ Examples:
   $ git pair seanknox ryanswood
 
 Sign out:
-  git pair out"
+
+  $ git pair out"
   current_user_name=`git config --global user.name`
   current_user_email=`git config --global user.email`
 
@@ -134,7 +129,7 @@ Current email: $current_user_email"
 }
 
 # One arg given - set the git author to one person
-! test $2 && {
+! test "$2" && {
   flush_credential_cache
   unset_local_gitconfig_author
   remove_hub_credential_file
