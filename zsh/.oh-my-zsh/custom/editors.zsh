@@ -5,8 +5,8 @@ alias vi='vim'
 alias v='vim'
 co() {
   if [ -z "$1" ]; then
-    code $1
-  else
     code .
+  else
+    code $1
   fi
 }

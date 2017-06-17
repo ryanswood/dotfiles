@@ -18,6 +18,12 @@ $ cd onehouse-dotfiles
 $ stow vim zsh rubygems tmux git
 ```
 
+Setup git config:
+
+```bash
+$ cp templates/.gitconfig ~/
+```
+
 Install the Tmux Plugin Manager:
 
 ```bash
