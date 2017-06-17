@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Download Sierra (or current Mac OS) via the AppStore App. Cancel out of
+# the installer window when it loads up after it downloads.
+#
+# The installer app will be in the Applications directory.
+#
+# After inserting the USB stick, run the following command on the terminal.
+
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+COLOR_RESET=$(tput sgr0)
+
+say() {
+  echo -e "${2:-$YELLOW}$1${COLOR_RESET}"
+}
+
+say "What is the name of the usb drive?"
+read usb_drive_name
+
+sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia \
+  --volume /Volumes/${usb_drive_name} --applicationpath /Applications/Install\ macOS\ Sierra.app

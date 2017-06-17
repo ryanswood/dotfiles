@@ -1,0 +1,10 @@
+#!/bin/bash
+
+xcode-select --install
+
+# Show hidden files in finder
+defaults write com.apple.finder AppleShowAllFiles YES
+killall Finder
+
+# Keyboard hold down repeat
+defaults write -g ApplePressAndHoldEnabled -bool false

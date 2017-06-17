@@ -1,0 +1,17 @@
+#!/bin/bash
+
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew tap caskroom/fonts
+
+while read formula; do
+  brew install $formula
+done < brew-formulas.txt
+
+while read formula; do
+  brew cask install $formula
+done < brew-cask-formulas.txt
+
+brew services start postgres
+brew services start mysql
+brew services start redis
+./usr/local/opt/fzf/install

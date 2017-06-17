@@ -1,0 +1,17 @@
+dropbox
+iterm2
+visual-studio-code
+istat-menus
+virtualbox
+vagrant
+screenhero
+sketch
+dash
+slack
+alfred
+font-consolas-for-powerline
+font-fira-code
+font-fira-mono
+font-fira-mono-for-powerline
+font-fira-sans
+font-roboto
