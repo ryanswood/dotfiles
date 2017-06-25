@@ -1,3 +1,6 @@
+myip() {
+  ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}'
+}
 alias rmrf='rm -rf'
 alias retag='ctags -R --exclude=.git --exclude=log --exclude=tmp --exclude=.js'
 alias va='vagrant'
