@@ -1,7 +1,7 @@
 alias g='git'
-alias ga='git add'
+alias gote='git remote'
+alias gach='git branch -a'
 alias gadd='git add'
-alias gA='git add -A'
 alias gs='git status'
 alias gl='git log'
 alias glop='git log -p'
@@ -13,9 +13,15 @@ alias gone='git clone'
 alias gout='git checkout'
 alias goub='git checkout -b'
 alias gaco='git add -A && git commit -m'
+alias gac='git add -A && git commit'
+alias gc='git commit'
+gend() {
+  stage_all_if_none_staged
+  git commit --amend --no-edit
+}
+alias gitm='git commit -m'
 alias gset='git reset'
 alias gseh='git reset head^1'
-alias gase='git rebase'
 gsho() {
   if [ -z "$1" ]; then
     sha=$(git rev-parse HEAD)
@@ -24,6 +30,7 @@ gsho() {
   fi
   git show $sha
 }
+alias gase='git rebase'
 gasi() {
   if [ -z "$1" ]; then
     number='5'
@@ -32,6 +39,7 @@ gasi() {
   fi
   git rebase -i head~$number
 }
+alias gasc='git rebase --continue'
 stage_all_if_none_staged() {
   git status | grep -q 'Changes to be committed'
   if [[ $? -eq 1 ]] ; then
@@ -47,17 +55,9 @@ gwip() {
   fi
   git commit -m $message
 }
-alias gasc='git rebase --continue'
 alias gash='git stash -u'
 alias gpop='git stash pop'
 alias giff='git diff'
 alias gifs='dit diff --staged'
 alias gerg='git merge'
-alias gac='git add -A && git commit'
-alias gc='git commit'
-gcam() {
-  stage_all_if_none_staged
-  git commit --amend --no-edit
-}
-alias gitm='git commit -m'
 alias gref='git reflog'
