@@ -16,6 +16,14 @@ alias gaco='git add -A && git commit -m'
 alias gset='git reset'
 alias gseh='git reset head^1'
 alias gase='git rebase'
+gsho() {
+  if [ -z "$1" ]; then
+    sha=$(git rev-parse HEAD)
+  else
+    sha="$1"
+  fi
+  git show $sha
+}
 gasi() {
   if [ -z "$1" ]; then
     number='5'
