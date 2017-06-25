@@ -1,3 +1,4 @@
+alias gnit='git init'
 alias g='git'
 alias gote='git remote'
 alias gach='git branch -a'

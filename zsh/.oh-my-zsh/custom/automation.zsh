@@ -1,3 +1,4 @@
+alias rmrf='rm -rf'
 alias retag='ctags -R --exclude=.git --exclude=log --exclude=tmp --exclude=.js'
 alias va='vagrant'
 alias l='ls -hla'
@@ -8,6 +9,9 @@ alias edithosts='sudo vi /etc/hosts'
 alias reloadhosts='dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 alias npr='npm run -s'
 alias es="exec $SHELL"
+sshconfig() {
+  $EDITOR ~/.ssh/config
+}
 
 cl()
 {
