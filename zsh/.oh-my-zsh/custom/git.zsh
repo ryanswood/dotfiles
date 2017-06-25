@@ -1,7 +1,14 @@
 alias g='git'
 alias gote='git remote'
 alias gach='git branch -a'
-alias gadd='git add'
+gadd() {
+  if [ -z "$1" ]; then
+    stage='.'
+  else
+    stage="$1"
+  fi
+  git add $stage
+}
 alias gs='git status'
 alias gl='git log'
 alias glop='git log -p'
@@ -12,16 +19,25 @@ alias gech='git fetch'
 alias gone='git clone'
 alias gout='git checkout'
 alias goub='git checkout -b'
-alias gaco='git add -A && git commit -m'
-alias gac='git add -A && git commit'
-alias gc='git commit'
+
+alias gc='gaco'
+alias gac='gaco'
+gaco() {
+  stage_all_if_none_staged
+  if [ -z "$1" ]; then
+    message=''
+  else
+    message="-m $1"
+  fi
+  git commit $message
+}
+
 gend() {
   stage_all_if_none_staged
   git commit --amend --no-edit
 }
-alias gitm='git commit -m'
-alias gset='git reset'
-alias gseh='git reset head^1'
+alias gres='git reset'
+alias greh='git reset head^1'
 gsho() {
   if [ -z "$1" ]; then
     sha=$(git rev-parse HEAD)
