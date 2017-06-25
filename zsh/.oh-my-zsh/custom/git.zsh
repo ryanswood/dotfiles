@@ -13,9 +13,32 @@ alias gone='git clone'
 alias gout='git checkout'
 alias goub='git checkout -b'
 alias gaco='git add -A && git commit -m'
-alias gset='git reset head^1'
+alias gset='git reset'
+alias gseh='git reset head^1'
 alias gase='git rebase'
-gasi() { git rebase -i head~$1 }
+gasi() {
+  if [ -z "$1" ]; then
+    number='5'
+  else
+    number="$1"
+  fi
+  git rebase -i head~$number
+}
+stage_all_if_none_staged() {
+  git status | grep -q 'Changes to be committed'
+  if [[ $? -eq 1 ]] ; then
+    git add .
+  fi
+}
+gwip() {
+  stage_all_if_none_staged
+  if [ -z "$1" ]; then
+    message='wip'
+  else
+    message="wip: $1"
+  fi
+  git commit -m $message
+}
 alias gasc='git rebase --continue'
 alias gash='git stash -u'
 alias gpop='git stash pop'
@@ -24,6 +47,9 @@ alias gifs='dit diff --staged'
 alias gerg='git merge'
 alias gac='git add -A && git commit'
 alias gc='git commit'
-alias gcam='git commit --amend'
+gcam() {
+  stage_all_if_none_staged
+  git commit --amend --no-edit
+}
 alias gitm='git commit -m'
 alias gref='git reflog'
