@@ -19,19 +19,17 @@ alias gull='git pull'
 alias gech='git fetch'
 alias gone='git clone'
 gonc() {
+  repo_url=$1
   if [ -z "$2" ]; then
-    repo_url=$1
     repo_name_with_git="${repo_url##*/}"
     directory_name=${repo_name_with_git%.git}
   else
     directory_name="$2"
   fi
-  # git clone $1 $directory_name && cd $directory_name
-  echo $directory_name
+  git clone $repo_url $directory_name && cd $directory_name
 }
 alias gout='git checkout'
 alias goub='git checkout -b'
-
 alias gc='gaco'
 alias gac='gaco'
 gaco() {
@@ -43,7 +41,6 @@ gaco() {
   fi
   git commit $message
 }
-
 gend() {
   stage_all_if_none_staged
   git commit --amend --no-edit
