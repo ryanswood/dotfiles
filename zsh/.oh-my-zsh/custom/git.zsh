@@ -2,17 +2,24 @@ RED=$(tput setaf 1)
 GREEN=$(tput setaf 2)
 YELLOW=$(tput setaf 3)
 COLOR_RESET=$(tput sgr0)
-
 say() {
   echo -e "${2:-$YELLOW}$1${COLOR_RESET}"
 }
-
 alias gnit='git init'
 alias g='git'
 alias gote='git remote'
 alias gach='git branch'
 alias gacha='git branch -a'
-alias gachd='git branch -D'
+gachd() {
+  if [ -z "$1" ]; then
+    say 'Which branch do you want to delete?' $RED
+    branches_select_list
+    local branch=$(pick_branch)
+  else
+    local branch="$1"
+  fi
+  git branch -D $branch
+}
 gadd() {
   if [ -z "$1" ]; then
     stage='.'
@@ -40,18 +47,27 @@ gonc() {
   fi
   git clone $repo_url $directory_name && cd $directory_name
 }
+alias current_branch="git rev-parse --abbrev-ref HEAD"
+alias local_branches="git for-each-ref --format='%(refname:short)' refs/heads/"
+branches_select_list() {
+  local branches=($(local_branches))
+  for ((i = 1; i < ${#branches[@]}+1; ++i)); do
+    echo "$i) ${branches[$i]}"
+  done
+  printf "› "
+}
+pick_branch() {
+  local branches=($(local_branches))
+  read branch_num
+  echo ${branches[$branch_num]}
+}
 gout() {
   if [ -z "$1" ]; then
-    branches=($(git for-each-ref --format='%(refname:short)' refs/heads/))
     say 'Which branch do you want?'
-    for ((i = 1; i < ${#branches[@]}+1; ++i)); do
-      echo "$i) ${branches[$i]}"
-    done
-    printf "› "
-    read branch_num
-    branch="${branches[$branch_num]}"
+    branches_select_list
+    local branch=$(pick_branch)
   else
-    branch="$1"
+    local branch="$1"
   fi
   git checkout $branch
 }
@@ -61,9 +77,9 @@ alias gc='gac'
 gac() {
   stage_all_if_none_staged
   if [ -z "$1" ]; then
-    message=''
+    local message=''
   else
-    message="-m $1"
+    local message="-m $1"
   fi
   git commit $message
 }
@@ -75,26 +91,26 @@ alias gres='git reset'
 alias gresha='git reset --hard'
 greshe() {
   if [ -z "$1" ]; then
-    num=1
+    local num=1
   else
-    num="$1"
+    local num="$1"
   fi
   git reset head~$num
 }
 gsho() {
   if [ -z "$1" ]; then
-    sha=$(git rev-parse HEAD)
+    local sha=$(git rev-parse HEAD)
   else
-    sha="$1"
+    local sha="$1"
   fi
   git show $sha
 }
 alias gase='git rebase'
 gasi() {
   if [ -z "$1" ]; then
-    number='5'
+    local number='5'
   else
-    number="$1"
+    local number="$1"
   fi
   git rebase -i head~$number
 }
@@ -106,13 +122,17 @@ stage_all_if_none_staged() {
   fi
 }
 gwip() {
+  if [ $(current_branch) = 'master' ]; then
+    say "You're trying to wip master.  Wip a branch instead." $RED
+    return 1
+  fi
   stage_all_if_none_staged
   if [ -z "$1" ]; then
-    message='wip'
+    local message='wip'
   else
-    message="wip: $1"
+    local message="wip: $1"
   fi
-  git commit -m $message
+  git commit -m "$message [ci skip]"
 }
 alias gash='git stash -u'
 alias gpop='git stash pop'
