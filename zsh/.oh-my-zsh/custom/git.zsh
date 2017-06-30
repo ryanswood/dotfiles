@@ -57,15 +57,8 @@ gout() {
 }
 alias goum='git checkout master'
 alias goub='git checkout -b'
-<<<<<<< HEAD
-alias gc='gaco'
-alias gac='gaco'
-gaco() {
-=======
-
 alias gc='gac'
 gac() {
->>>>>>> Removing git gaco in favor of gac
   stage_all_if_none_staged
   if [ -z "$1" ]; then
     message=''
