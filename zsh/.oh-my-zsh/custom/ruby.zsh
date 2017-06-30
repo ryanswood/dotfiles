@@ -28,7 +28,7 @@ alias radt='bundle exec rails db:test:prepare'
 alias raps='rake parallel:spec'
 alias rapp='rake parallel:prepare'
 alias fors='bundle exec foreman start'
-alias mm='middleman'
+alias mm='bundle exec middleman'
 
 last-migration() {
   ls db/migrate | sort -nk 1.1,1.14 | tail -n 1 | xargs -o -I migration $EDITOR db/migrate/migration
