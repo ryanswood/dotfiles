@@ -1,7 +1,18 @@
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+COLOR_RESET=$(tput sgr0)
+
+say() {
+  echo -e "${2:-$YELLOW}$1${COLOR_RESET}"
+}
+
 alias gnit='git init'
 alias g='git'
 alias gote='git remote'
-alias gach='git branch -a'
+alias gach='git branch'
+alias gacha='git branch -a'
+alias gachd='git branch -D'
 gadd() {
   if [ -z "$1" ]; then
     stage='.'
@@ -15,6 +26,7 @@ alias gl='git log'
 alias glop='git log -p'
 alias glog='git log --pretty=format:"%C(yellow)%h%C(reset) %C(blue)%ci%C(reset) %s %C(blue)[%cn]%C(reset)"'
 alias gush='git push'
+alias gushf='git push -f'
 alias gull='git pull'
 alias gech='git fetch'
 alias gone='git clone'
@@ -28,7 +40,22 @@ gonc() {
   fi
   git clone $repo_url $directory_name && cd $directory_name
 }
-alias gout='git checkout'
+gout() {
+  if [ -z "$1" ]; then
+    branches=($(git for-each-ref --format='%(refname:short)' refs/heads/))
+    say 'Which branch do you want?'
+    for ((i = 1; i < ${#branches[@]}+1; ++i)); do
+      echo "$i) ${branches[$i]}"
+    done
+    printf "› "
+    read branch_num
+    branch="${branches[$branch_num]}"
+  else
+    branch="$1"
+  fi
+  git checkout $branch
+}
+alias goum='git checkout master'
 alias goub='git checkout -b'
 alias gc='gaco'
 alias gac='gaco'
@@ -46,7 +73,15 @@ gend() {
   git commit --amend --no-edit
 }
 alias gres='git reset'
-alias greh='git reset head^1'
+alias gresha='git reset --hard'
+greshe() {
+  if [ -z "$1" ]; then
+    num=1
+  else
+    num="$1"
+  fi
+  git reset head~$num
+}
 gsho() {
   if [ -z "$1" ]; then
     sha=$(git rev-parse HEAD)
@@ -88,3 +123,4 @@ alias gerg='git merge'
 alias gref='git reflog'
 alias gean='git clean -df'
 alias gonf='git config'
+alias gick='git cherry-pick'
