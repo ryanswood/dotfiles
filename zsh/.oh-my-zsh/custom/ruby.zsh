@@ -18,6 +18,7 @@ spec() {
 }
 alias r='bundle exec rails'
 alias rac='bundle exec rails console'
+alias rag='bundle exec rails generate'
 alias ras='bundle exec rails server'
 alias ram='bundle exec rails db:migrate'
 alias rads='bundle exec rails db:setup'
