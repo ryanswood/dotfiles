@@ -106,6 +106,7 @@ gsho() {
   git show $sha
 }
 alias gase='git rebase'
+alias gasm='git rebase master'
 gasi() {
   if [ -z "$1" ]; then
     local number='5'
@@ -143,3 +144,4 @@ alias gref='git reflog'
 alias gean='git clean -df'
 alias gonf='git config'
 alias gick='git cherry-pick'
+alias gipr='git pull-request'
