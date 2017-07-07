@@ -1,4 +1,3 @@
-
 {
     "window.zoomLevel": 1,
     "vim.useCtrlKeys": true,
@@ -33,10 +32,11 @@
     "terminal.integrated.lineHeight": 1.1,
     "python.editor.tabSize": 4,
     "vim.enableNeovim": true,
+    "vim.neovimPath": "/usr/local/bin/nvim",
     "vim.disableAnnoyingNeovimMessage": true,
     "material-icon-theme.showWelcomeMessage": false,
     "vim.leader": ",",
-    "vim.statusBarColorControl": true,
+    "vim.statusBarColorControl": false,
     "vim.statusBarColors" : {
         "normal": "#0078cf",
         "insert": "#d16900",
@@ -45,16 +45,20 @@
         "visualblock": "#9d00d1f",
         "replace": "#000000"
     },
-    "workbench.colorCustomizations": {
-      "statusBar.background": "#9d00d1f",
-      "statusBar.noFolderBackground": "#9d00d1f",
-      "statusBar.debuggingBackground": "#9d00d1f"
-    },
     "vim.disableAnnoyingGcMessage": true,
     "editor.cursorStyle": "line",
     "material-icon-theme.showUpdateMessage": false,
     "editor.minimap.enabled": false,
     "editor.renderLineHighlight": "none",
     "editor.renderIndentGuides": false,
-    "editor.renderWhitespace": "all"
+    "editor.renderWhitespace": "all",
+    "files.exclude": {
+      "**/.git": true,
+      "*.swp": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true
+    },
+    "git.enableSmartCommit": true
   }
