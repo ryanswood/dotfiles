@@ -63,6 +63,9 @@
     },
     "git.enableSmartCommit": true,
     "files.associations": {
-      "*.thor": "ruby"
+      "*.rake": "ruby",
+      ".pryrc": "ruby",
+      "*.thor": "ruby",
+      "*.jsx": "javascript"
     }
   }
