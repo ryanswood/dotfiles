@@ -1,4 +1,5 @@
 zsh
+zsh-syntax-highlighting
 git
 vim
 stow
@@ -28,3 +29,6 @@ nmap
 golang
 neovim/neovim/neovim
 heroku
+ssh-copy-id
+ripgrep
+pgcli
