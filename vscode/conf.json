@@ -67,5 +67,7 @@
       ".pryrc": "ruby",
       "*.thor": "ruby",
       "*.jsx": "javascript"
-    }
+    },
+    "extensions.ignoreRecommendations": true,
+    "workbench.startupEditor": "none"
   }
