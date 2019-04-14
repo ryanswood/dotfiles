@@ -1,43 +1,31 @@
-Connorcpu.vsc-rustfmt
-DotJoshJohnson.xml
-IBM.output-colorizer
-PKief.material-icon-theme
-RolandGreim.sharecode
-Zignd.html-css-class-completion
-christian-kohler.path-intellisense
-deerawan.vscode-dash
-donjayamanne.githistory
-donjayamanne.jupyter
-donjayamanne.python
-eg2.tslint
-file-icons.file-icons
-formulahendry.auto-close-tag
-formulahendry.code-runner
-hjleochen.rails-nav
-jakethashi.vscode-angular2-emmet
-johnpapa.Angular2
-kaiwood.endwise
-kalitaalexey.vscode-rust
-kamikillerto.vscode-colorize
-lukehoban.Go
-magicstack.MagicPython
-misogi.ruby-rubocop
-msjsdiag.debugger-for-chrome
-noku.rails-run-spec-vscode
-otoniel-isidoro.vscode-ruby-ctags
-rbbit.typescript-hero
-rebornix.Ruby
-robertohuertasm.vscode-icons
-robinbentley.sass-indented
-sporto.rails-go-to-spec
-tht13.python
-tmikoss.rails-latest-migration
-tushortz.python-extended-snippets
-vayan.haml
-vscodevim.vim
-waderyan.gitblame
-wmaurer.change-case
-xabikos.JavaScriptSnippets
-xabikos.ReactSnippets
-zhuangtongfa.Material-theme
-ziyasal.vscode-open-in-github
+code --install-extension 2gua.rainbow-brackets
+code --install-extension alefragnani.Bookmarks
+code --install-extension asvetliakov.snapshot-tools
+code --install-extension burkeholland.simple-react-snippets
+code --install-extension capaj.vscode-exports-autocomplete
+code --install-extension castwide.solargraph
+code --install-extension eamodio.gitlens
+code --install-extension elliotlarson.ruby-around-the-block
+code --install-extension enochc.copy-relative-path
+code --install-extension esbenp.prettier-vscode
+code --install-extension GitHub.vscode-pull-request-github
+code --install-extension kaiwood.endwise
+code --install-extension kiteco.kite
+code --install-extension miguel-savignano.ruby-symbols
+code --install-extension misogi.ruby-rubocop
+code --install-extension ms-vscode.Go
+code --install-extension ms-vsliveshare.vsliveshare
+code --install-extension ms-vsliveshare.vsliveshare-audio
+code --install-extension noku.rails-run-spec-vscode
+code --install-extension PeterJausovec.vscode-docker
+code --install-extension PKief.material-icon-theme
+code --install-extension rebornix.ruby
+code --install-extension robinbentley.sass-indented
+code --install-extension sporto.rails-go-to-spec
+code --install-extension sysoev.language-stylus
+code --install-extension t7yang.hyper-javascript-snippets
+code --install-extension tmikoss.rails-latest-migration
+code --install-extension vayan.haml
+code --install-extension vscodevim.vim
+code --install-extension xabikos.JavaScriptSnippets
+code --install-extension zhuangtongfa.Material-theme
