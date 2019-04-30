@@ -15,3 +15,5 @@ font-fira-mono
 font-fira-mono-for-powerline
 font-fira-sans
 font-roboto
+flux
+sourcetree

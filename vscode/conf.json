@@ -110,4 +110,5 @@
   "go.autocompleteUnimportedPackages": true,
   "editor.wordWrap": "on",
   "kite.showWelcomeNotificationOnStartup": false,
+  "editor.rulers": [80,120]
 }

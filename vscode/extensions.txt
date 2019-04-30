@@ -1,31 +1,31 @@
-code --install-extension 2gua.rainbow-brackets
-code --install-extension alefragnani.Bookmarks
-code --install-extension asvetliakov.snapshot-tools
-code --install-extension burkeholland.simple-react-snippets
-code --install-extension capaj.vscode-exports-autocomplete
-code --install-extension castwide.solargraph
-code --install-extension eamodio.gitlens
-code --install-extension elliotlarson.ruby-around-the-block
-code --install-extension enochc.copy-relative-path
-code --install-extension esbenp.prettier-vscode
-code --install-extension GitHub.vscode-pull-request-github
-code --install-extension kaiwood.endwise
-code --install-extension kiteco.kite
-code --install-extension miguel-savignano.ruby-symbols
-code --install-extension misogi.ruby-rubocop
-code --install-extension ms-vscode.Go
-code --install-extension ms-vsliveshare.vsliveshare
-code --install-extension ms-vsliveshare.vsliveshare-audio
-code --install-extension noku.rails-run-spec-vscode
-code --install-extension PeterJausovec.vscode-docker
-code --install-extension PKief.material-icon-theme
-code --install-extension rebornix.ruby
-code --install-extension robinbentley.sass-indented
-code --install-extension sporto.rails-go-to-spec
-code --install-extension sysoev.language-stylus
-code --install-extension t7yang.hyper-javascript-snippets
-code --install-extension tmikoss.rails-latest-migration
-code --install-extension vayan.haml
-code --install-extension vscodevim.vim
-code --install-extension xabikos.JavaScriptSnippets
-code --install-extension zhuangtongfa.Material-theme
+2gua.rainbow-brackets
+alefragnani.Bookmarks
+asvetliakov.snapshot-tools
+burkeholland.simple-react-snippets
+capaj.vscode-exports-autocomplete
+castwide.solargraph
+eamodio.gitlens
+elliotlarson.ruby-around-the-block
+enochc.copy-relative-path
+esbenp.prettier-vscode
+GitHub.vscode-pull-request-github
+kaiwood.endwise
+kiteco.kite
+miguel-savignano.ruby-symbols
+misogi.ruby-rubocop
+ms-vscode.Go
+ms-vsliveshare.vsliveshare
+ms-vsliveshare.vsliveshare-audio
+noku.rails-run-spec-vscode
+PeterJausovec.vscode-docker
+PKief.material-icon-theme
+rebornix.ruby
+robinbentley.sass-indented
+sporto.rails-go-to-spec
+sysoev.language-stylus
+t7yang.hyper-javascript-snippets
+tmikoss.rails-latest-migration
+vayan.haml
+vscodevim.vim
+xabikos.JavaScriptSnippets
+zhuangtongfa.Material-theme
