@@ -169,8 +169,8 @@ gase() {
   git rebase $@
 }
 gasm() {
-  sayCmd "git fetch origin master && git rebase origin master"
-  git fetch origin master && git rebase origin master
+  sayCmd "git fetch origin master && git rebase origin/master"
+  git fetch origin master && git rebase origin/master
 }
 gasi() {
   if [ -z "$1" ]; then
@@ -203,8 +203,8 @@ gwip() {
   else
     local message="wip: $1"
   fi
-  sayCmd "git commit -m \"$message [ci skip]\""
-  git commit -m "$message [ci skip]"
+  sayCmd "git commit -m \"$message\""
+  git commit -m "$message"
 }
 gash() {
   sayCmd "git stash -u"

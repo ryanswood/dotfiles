@@ -29,3 +29,4 @@ vayan.haml
 vscodevim.vim
 xabikos.JavaScriptSnippets
 zhuangtongfa.Material-theme
+sleistner.vscode-fileutils

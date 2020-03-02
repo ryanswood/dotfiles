@@ -49,3 +49,5 @@ source $HOME/.zshrc.local
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+eval "$(direnv hook zsh)"
